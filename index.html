@@ -12,16 +12,42 @@
     <!-- font awesome kit  -->
     <script src="https://kit.fontawesome.com/eb9242a349.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body class="">
     <header>
-
+        <h1 class="text-center bg-success p-3">An Open World to Find Books!!!</h1>
+        <h2 class="text-center text-primary p-2" > Search Your Books Here:</h2>
     </header>
     <main>
+        <!-- book search area  -->
+        <div class="mx-auto">
+            <div class="input-group mb-3 w-75 mx-auto">
+                <input id="search-field" type="text" class="form-control" placeholder="Search the book you want:" aria-label="Search the book you want:" aria-describedby="button-addon2">
+                <button onclick="searchBook()" class="btn btn-outline-secondary" type="button" id="button-search">Search</button>
+            </div>
+
+            <!-- loading spinner  -->
+            <div id="spinner">
+                Loading...
+            </div>
+        </div>
+
+        <!-- error-message -->
+        <div >
+            <p id="error-message" class=" text-danger">Something went wrong! please try again!!!</p>
+        </div>
+
+        <!-- single book details  -->
+        <div id="book-details" class="w-75 mx-auto">
+
+        </div>
+
+        <!-- book search result -->
+        <div id="search-result" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 p-5">
+
+        </div>
 
     </main>
-    <footer>
 
-    </footer>
     <!-- import custom js file  -->
     <script src="/js/script.js"></script>
     <!-- importing bootstrap js from CDN  -->
