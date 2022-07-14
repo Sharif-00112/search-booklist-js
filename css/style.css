@@ -1,0 +1,10 @@
+.text-danger{
+    display: none;
+    text-align: center;
+} 
+
+#spinner{
+    display: none;
+    text-align: center;
+    color: #3498db;
+}
