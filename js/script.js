@@ -13,10 +13,11 @@ const searchBook = () => {
     const searchField = document.getElementById('search-field');
     const searchText = searchField.value;
 
-    //display spinner and hide previous result and previous error while loading
+    //display spinner and hide previous result, previous search count and previous error while loading
     toggleSpinner('block');
     toggleSearchResult('none');
     document.getElementById('error-message').style.display = 'none';
+    document.getElementById('search-result-count').style.display = 'none';
 
     //clearing previous search word
     searchField.value = '';
@@ -38,18 +39,22 @@ const displayError = error =>{
 
 //display search result
 const displaySearchResult = (docs) =>{
-    console.log(docs);
+    console.log(docs.length);
     const searchResult = document.getElementById('search-result');
     //clear previous search
     searchResult.textContent = '';
     document.getElementById('error-message').style.display = 'none';
+
+    //search result count
+    document.getElementById('search-result-count').innerText = `${docs.length} results found`;
+    document.getElementById('search-result-count').style.display = 'block';
 
     docs.forEach(doc => {
         const div = document.createElement('div');
         div.classList.add('col');
         div.innerHTML = `
         <div onclick =" " class="card h-100">
-
+            <img src="https://covers.openlibrary.org/b/id/${doc.cover_i}-M.jpg" class="card-img-top p-3" alt="...">
             <div class="card-body">
                 <h5 class="card-title">Title: ${doc.title}</h5>
                 <p class="card-text">Author: ${doc.author_name}</p>
